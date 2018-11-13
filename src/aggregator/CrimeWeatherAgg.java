@@ -139,12 +139,15 @@ public class CrimeWeatherAgg {
         }
       }
 
-      lineOut = key + "," + weatherLine + "," + crimeLine;
+      if(crimeLine != "" && weatherLine != "") {
+
+        lineOut = key + "," + weatherLine + "," + crimeLine;
 
 //      System.out.println("FINAL OUT: " + key + " " + finalOut);
 
-      finalOut.set(lineOut);
-      context.write(finalOut, NullWritable.get());
+        finalOut.set(lineOut);
+        context.write(finalOut, NullWritable.get());
+      }
     }
   }
 
@@ -164,7 +167,7 @@ public class CrimeWeatherAgg {
 
     job.setJarByClass(CrimeWeatherAgg.class);
 //    job.setPartitionerClass(job1Partitioner.class);
-    job.setNumReduceTasks(10);
+    job.setNumReduceTasks(1);
     job.setReducerClass(Reducer1.class);
 
     job.setMapOutputKeyClass(Text.class);
