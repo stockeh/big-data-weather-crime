@@ -57,6 +57,7 @@ public class CrimeWeather {
 
         // format date from YYYY-MM-DD to
         String[] tempDate = inputSplit[0].split("-");
+        
         String dateOut = tempDate[1] + "/" + tempDate[2] + "/" + tempDate[0];
 //        String dateOut = Integer.toString(days);
 //        days++;
