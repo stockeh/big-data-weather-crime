@@ -2,6 +2,3 @@ data/*
 *.class
 notebooks/.ipynb_checkpoints/
 notebooks/__pycache__/
-notebooks/mlutils.py
-notebooks/neuralnetworks.py
-notebooks/scaledconjugategradient.py
