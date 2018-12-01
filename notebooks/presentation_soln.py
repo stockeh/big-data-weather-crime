@@ -180,7 +180,7 @@ def bar_test(year=5, district='4', daily=False):
             p30 = np.poly1d(np.polyfit(x, y, 15))
             xp = np.linspace(0, len(y) - 1, linespace_s)
 
-            plt.bar(x, y, color='tan')
+            plt.bar(x, y, color='sienna')
             _ = plt.plot(xp, p(xp), 'k--', xp, p30(xp), 'b-', lw=2.5)
             plt.title(col[i])
             plt.xlabel('days (samples)'), plt.ylabel('num crimes') 
