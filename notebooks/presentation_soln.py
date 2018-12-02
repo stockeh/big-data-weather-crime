@@ -166,10 +166,12 @@ def bar_test(year=5, district='4', daily=False):
         
         bags = 52
         linespace_s = 50
+        title_ = 'days'
         if daily is True:
             bags = 365
             linespace_s = 500
-            
+            title_ = 'weeks'            
+
         for i in range(len(col)):
             plt.subplot(4,2,i+1)  
             y = data[col[i]][bags*(year - 1):bags*year]
@@ -180,10 +182,10 @@ def bar_test(year=5, district='4', daily=False):
             p30 = np.poly1d(np.polyfit(x, y, 15))
             xp = np.linspace(0, len(y) - 1, linespace_s)
 
-            plt.bar(x, y, color='sienna')
+            plt.bar(x, y, color='darkgoldenrod')
             _ = plt.plot(xp, p(xp), 'k--', xp, p30(xp), 'b-', lw=2.5)
             plt.title(col[i])
-            plt.xlabel('days (samples)'), plt.ylabel('num crimes') 
+            plt.xlabel(title_ +' (samples)'), plt.ylabel('num crimes') 
 
         plt.show() 
         
