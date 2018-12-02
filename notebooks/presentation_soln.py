@@ -166,11 +166,11 @@ def bar_test(year=5, district='4', daily=False):
         
         bags = 52
         linespace_s = 50
-        title_ = 'days'
+        title_ = 'weeks'
         if daily is True:
             bags = 365
             linespace_s = 500
-            title_ = 'weeks'            
+            title_ = 'days'            
 
         for i in range(len(col)):
             plt.subplot(4,2,i+1)  
